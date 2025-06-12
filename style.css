@@ -1,100 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     background-color: white;
-    font-family: "Inter";
+    font-family: "Inter", sans-serif;
     font-size: 14px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
     padding: 20px;
 }
 
-/* Headings */
+#main {
+    display: grid;
+    background-color: #ebebeb;
 
-h1 {
-    font-size: 25px;
-}
+    grid-template-areas:
+    "header header"
+    "profile about_me"
+    "menu content"
+    "footer footer";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 10px;
 
-h2 {
-    font-size: 20px;
-}
-
-/* Main box */
-
-div#main {
-    background-color: #EDEDED;
-
-    display: flex;
-    flex-direction: column;
-
-    height: 85vh;
-    width: 75vh;
+    width: min(75vh, 90vw);
+    height: min(85vh, 90vh);
 
     border-radius: 5%;
-    box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
     padding: 2%;
-
-    box-sizing: border-box;
 }
 
-div#content {
+#tittle {
+    grid-area: header;
+    text-align: center;
+}
+#profile {
+    grid-area: profile;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about_me {
+    grid-area: about_me;
+}
+#menu {
+    grid-area: menu;
     display: flex;
     flex-direction: column;
-    flex: 1;
-    overflow: hidden;
-}
-
-/* Profile layout fix */
-
-div#profile {
-    display: flex;
-    align-items: center;
     gap: 10px;
-    margin-top: 10px;
+}
+#content {
+    grid-area: content;
+}
+#footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .profile_image {
-    width: 100px;
-    height: auto;
-    border-radius: 5px;
+    width: 15vh;
+    border-radius: 8px;
+}
+.art {
+    width: 30vh;
+    border-radius: 8px;
 }
 
-.profile_text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+#menu button {
+    padding: 10px;
+    border: 1px solid #999;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-/* Pages and layout */
-
-.pages {
-    display: flex;
-    flex: 1;
-    margin-top: 10px;
+#menu button h3 {
+    font-size: 15px;
+    margin: 0;
 }
 
-div#tabs {
-    flex: 30%;
-}
+h1 { font-size: 25px; }
+h2 { font-size: 20px; margin-bottom: 0.5em; }
+h3 { font-size: 15px; }
 
-div#page {
-    flex: 70%;
-}
-
-/* Footer */
-
-footer {
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-
-    margin-top: auto;
-    padding-top: 10px;
+#about_me p,
+#content p {
+    line-height: 1.4;
 }
 
 .icon {
-    width: 20px;
+    width: 3vh;
 }
