@@ -118,3 +118,29 @@ p{
     font-size: clamp(0.95rem, 1.6vw, 1.4rem);
     font-family: Arial;
 }
+
+/* Mobile */
+@media (max-width: 480px) {
+    #card {
+        width: clamp(200px, 90vw, 300px);
+        height: clamp(300px, 70vh, 500px);
+    }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+    #card {
+        width: clamp(300px, 60vw, 600px);
+        height: clamp(500px, 75vh, 800px);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    #card {
+        min-width: 500px;
+        min-height: 700px;
+        width: clamp(500px, 50vw, 800px);
+        height: clamp(700px, 80vh, 1000px);
+    }
+}
